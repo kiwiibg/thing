@@ -36,7 +36,7 @@ final_img2 = Image.composite(final_img2, unmasked_img2, mask)
 
 final_img2.save("template.png")
 
-fill_color = (120,8,220) 
+fill_color = (69,42,0) 
 
 img_orig = img_orig.convert("RGBA")   # it had mode P after DL it from OP
 if img_orig.mode in ('RGBA', 'LA'):
