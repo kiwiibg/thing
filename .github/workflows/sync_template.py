@@ -30,6 +30,8 @@ final_img2 = Image.new('RGBA', (6000, 3000))
 unmasked_img2 = Image.new('RGBA', (6000, 3000))
 unmasked_img2.paste(img, tl)
 unmasked_img2.paste(img2, tl2)
+
+unmasked_img2.save("unmasked_template.png")
 final_img2 = Image.composite(final_img2, unmasked_img2, mask)
 
 final_img2.save("template.png")
