@@ -10,7 +10,7 @@ response = requests.get("https://raw.githubusercontent.com/italyplace/rplace/mai
 img = Image.open(BytesIO(response.content))
 img = img.resize((img.size[0] * 3, img.size[1] * 3), Image.NEAREST)
 
-response2 = requests.get("https://raw.githubusercontent.com/italyplace/rplace/main/art.png?=" + str(ts))
+response2 = requests.get("https://raw.githubusercontent.com/italyplace/rplace/main/art-2.png?=" + str(ts))
 img2 = Image.open(BytesIO(response2.content))
 img2 = img2.resize((img2.size[0] * 3, img2.size[1] * 3), Image.NEAREST)
 
@@ -24,13 +24,6 @@ mask.paste(mask_i)
 mask.save("mask.png")
 
 tl = (782 * 3, 254  * 3) # top left corner
-
-final_img = Image.new('RGBA', (6000, 3000))
-unmasked_img = Image.new('RGBA', (6000, 3000))
-unmasked_img.paste(img, tl)
-final_img = Image.composite(final_img, unmasked_img, mask)
-final_img.save("template.png")
-
 tl2 = (1710 * 3, 516  * 3) # top left corner
 
 final_img2 = Image.new('RGBA', (6000, 3000))
@@ -39,5 +32,5 @@ unmasked_img2.paste(img, tl)
 unmasked_img2.paste(img2, tl2)
 final_img2 = Image.composite(final_img2, unmasked_img2, mask)
 
-final_img2.save("template2x.png")
+final_img2.save("template.png")
 
