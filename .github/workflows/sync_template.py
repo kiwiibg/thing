@@ -11,8 +11,8 @@ img = Image.open(BytesIO(response.content))
 img = img.resize((img.size[0] * 3, img.size[1] * 3), Image.NEAREST)
 
 response2 = requests.get("https://raw.githubusercontent.com/italyplace/rplace/main/art.png?=" + str(ts))
-img2 = Image.open(BytesIO(response.content))
-img2 = img2.resize((img.size[0] * 3, img.size[1] * 3), Image.NEAREST)
+img2 = Image.open(BytesIO(response2.content))
+img2 = img2.resize((img2.size[0] * 3, img2.size[1] * 3), Image.NEAREST)
 
 mask_url = "https://github.com/italyplace/thing/raw/main/mask2x.png"
 response = requests.get(mask_url)
