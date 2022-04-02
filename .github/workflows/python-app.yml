@@ -2,7 +2,7 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
 name: Python application
-on: issue_comment
+on: workflow_dispatch
 
 jobs:
   sync-image:
