@@ -23,7 +23,7 @@ mask = Image.new("1", (6000, 3000), 0)
 mask.paste(mask_i)
 mask.save("mask.png")
 
-tl = (782 * 3, 254  * 3) # top left corner
+tl = (0, 0) # top left corner
 
 final_img = Image.new('RGBA', (6000, 3000))
 unmasked_img = Image.new('RGBA', (6000, 3000))
@@ -31,7 +31,7 @@ unmasked_img.paste(img, tl)
 final_img = Image.composite(final_img, unmasked_img, mask)
 final_img.save("template.png")
 
-tl2 = (1710 * 3, 516  * 3) # top left corner
+tl2 = (0, 0) # top left corner
 
 final_img2 = Image.new('RGBA', (6000, 3000))
 unmasked_img2 = Image.new('RGBA', (6000, 3000))
