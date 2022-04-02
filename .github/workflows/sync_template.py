@@ -35,8 +35,8 @@ tl2 = (1710 * 3, 516  * 3) # top left corner
 
 final_img2 = Image.new('RGBA', (6000, 3000))
 unmasked_img2 = Image.new('RGBA', (6000, 3000))
+unmasked_img2.paste(img, tl)
 unmasked_img2.paste(img2, tl2)
-final_img2 = Image.composite(final_img2, unmasked_img, mask)
 final_img2 = Image.composite(final_img2, unmasked_img2, mask)
 
 final_img2.save("template2x.png")
