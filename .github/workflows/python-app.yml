@@ -24,6 +24,6 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git add template2x.png
           git add template.png
-          git add unmasked_template.png
+          git add art-botready.png
           git commit -am "sync image"
           git push

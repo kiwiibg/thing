@@ -8,6 +8,7 @@ ts = time.time()
 
 response = requests.get("https://raw.githubusercontent.com/italyplace/rplace/main/art.png?=" + str(ts))
 img = Image.open(BytesIO(response.content))
+img_orig  = Image.open(BytesIO(response.content))
 img = img.resize((img.size[0] * 3, img.size[1] * 3), Image.NEAREST)
 
 response2 = requests.get("https://raw.githubusercontent.com/italyplace/rplace/main/art-2.png?=" + str(ts))
@@ -31,8 +32,16 @@ unmasked_img2 = Image.new('RGBA', (6000, 3000))
 unmasked_img2.paste(img, tl)
 unmasked_img2.paste(img2, tl2)
 
-unmasked_img2.save("unmasked_template.png")
 final_img2 = Image.composite(final_img2, unmasked_img2, mask)
 
 final_img2.save("template.png")
 
+fill_color = (120,8,220) 
+
+img_orig = img_orig.convert("RGBA")   # it had mode P after DL it from OP
+if img_orig.mode in ('RGBA', 'LA'):
+    background = Image.new(img_orig.mode[:-1], img_orig.size, fill_color)
+    background.paste(img_orig, img_orig.split()[-1]) # omit transparency
+    img_orig = background
+
+img_orig.save("art-botready.png")
