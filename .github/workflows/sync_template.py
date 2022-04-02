@@ -1,8 +1,12 @@
 from PIL import Image, ImageOps
 import requests
 from io import BytesIO
+import time
+  
+# ts stores the time in seconds
+ts = time.time()
 
-response = requests.get("https://raw.githubusercontent.com/italyplace/rplace/main/art.png")
+response = requests.get("https://raw.githubusercontent.com/italyplace/rplace/main/art.png?=" + ts)
 img = Image.open(BytesIO(response.content))
 img = img.resize((img.size[0] * 3, img.size[1] * 3), Image.NEAREST)
 
