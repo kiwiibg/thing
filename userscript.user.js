@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ritaly template
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the canvas!
 // @author       oralekin
 // @match        https://hot-potato.reddit.com/embed*
@@ -17,7 +17,7 @@ if (window.top !== window.self) {
             }
             const i = document.createElement("img");
             i.src = "https://github.com/italyplace/thing/raw/main/template.png?" + Date.now();
-            i.style = "position: absolute;left: 0;top: 0px;image-rendering: pixelated;width: 1000px;height: 1000px;";
+            i.style = "position: absolute;left: 0;top: 0px;image-rendering: pixelated;width: 2000px;height: 1000px;";
             i.id = "mcss-overlay"
             i.setAttribute("vis",1)
             console.log(i);
