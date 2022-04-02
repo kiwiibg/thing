@@ -14,7 +14,7 @@ response2 = requests.get("https://raw.githubusercontent.com/italyplace/rplace/ma
 img2 = Image.open(BytesIO(response.content))
 img2 = img2.resize((img.size[0] * 3, img.size[1] * 3), Image.NEAREST)
 
-mask_url = "https://raw.githubusercontent.com/italyplace/thing/raw/main/mask2x.png"
+mask_url = "https://github.com/italyplace/thing/raw/main/mask2x.png"
 response = requests.get(mask_url)
 mask_i = Image.open(BytesIO(response.content))
 #mask_i = ImageOps.invert(mask_i.convert('RGB'))
