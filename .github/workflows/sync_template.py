@@ -2,7 +2,7 @@ from PIL import Image, ImageOps
 import requests
 from io import BytesIO
 
-response = requests.get("https://raw.githubusercontent.com/halfdane/rplace/main/images/GME14.png")
+response = requests.get("https://raw.githubusercontent.com/italyplace/thing/main/art.png")
 img = Image.open(BytesIO(response.content))
 img = img.resize((img.size[0] * 3, img.size[1] * 3), Image.NEAREST)
 
@@ -15,7 +15,7 @@ mask = Image.new("1", (3000, 3000), 0)
 mask.paste(mask_i)
 mask.save("mask.png")
 
-tl = (773 * 3, 735  * 3) # top left corner
+tl = (787 * 3, 254  * 3) # top left corner
 
 final_img = Image.new('RGBA', (3000, 3000))
 unmasked_img = Image.new('RGBA', (3000, 3000))
