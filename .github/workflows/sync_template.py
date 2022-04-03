@@ -2,7 +2,9 @@ from PIL import Image, ImageOps
 import requests
 from io import BytesIO
 import time
-  
+
+x1 = 782
+y1 = 192
 # ts stores the time in seconds
 ts = time.time()
 
@@ -24,13 +26,13 @@ mask = Image.new("1", (6000, 3000), 0)
 mask.paste(mask_i)
 mask.save("mask.png")
 
-tl = (782 * 3, 254  * 3) # top left corner
+tl = (x1 * 3, y1  * 3) # top left corner
 tl2 = (782 * 3, 199  * 3) # top left corner
 
 final_img2 = Image.new('RGBA', (6000, 3000))
 unmasked_img2 = Image.new('RGBA', (6000, 3000))
 unmasked_img2.paste(img, tl)
-unmasked_img2.paste(img2, tl2)
+#unmasked_img2.paste(img2, tl2)
 
 final_img2 = Image.composite(final_img2, unmasked_img2, mask)
 
