@@ -25,7 +25,7 @@ mask.paste(mask_i)
 mask.save("mask.png")
 
 tl = (782 * 3, 254  * 3) # top left corner
-tl2 = (1710 * 3, 516  * 3) # top left corner
+tl2 = (782 * 3, 199  * 3) # top left corner
 
 final_img2 = Image.new('RGBA', (6000, 3000))
 unmasked_img2 = Image.new('RGBA', (6000, 3000))
