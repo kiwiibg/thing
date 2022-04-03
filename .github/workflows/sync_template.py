@@ -2,6 +2,8 @@ from PIL import Image, ImageOps
 import requests
 from io import BytesIO
 import time
+canvasX = 6000
+canvasY = 6000
 
 x1 = 782
 y1 = 198
@@ -24,15 +26,15 @@ response = requests.get(mask_url)
 mask_i = Image.open(BytesIO(response.content))
 #mask_i = ImageOps.invert(mask_i.convert('RGB'))
 mask_i.save("mask_i.png")
-mask = Image.new("1", (6000, 3000), 0)
+mask = Image.new("1", (canvasX, canvasY), 0)
 mask.paste(mask_i)
 mask.save("mask.png")
 
 tl = (x1 * 3, y1  * 3) # top left corner
 tl2 = (x2 * 3, y2  * 3) # top left corner
 
-final_img2 = Image.new('RGBA', (6000, 3000))
-unmasked_img2 = Image.new('RGBA', (6000, 3000))
+final_img2 = Image.new('RGBA', (canvasX, canvasY))
+unmasked_img2 = Image.new('RGBA', (canvasX, canvasY))
 unmasked_img2.paste(img, tl)
 unmasked_img2.paste(img2, tl2)
 
