@@ -4,7 +4,7 @@ from io import BytesIO
 import time
 
 x1 = 782
-y1 = 192
+y1 = 198
 # ts stores the time in seconds
 ts = time.time()
 
